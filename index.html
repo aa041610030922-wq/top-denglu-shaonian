@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOP登陆少年组合 · 组合介绍</title>
+<meta name="description" content="TOP登陆少年（T.O.P，TransfOrm Project）组合介绍：成员、时间线、代表作品与成就。">
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --bg-2: #101628;
+    --card: #161d33;
+    --line: rgba(255, 255, 255, .1);
+    --text: #e8eaf2;
+    --text-dim: #9aa3b8;
+    --gold: #f0b90b;
+    --gold-2: #ff8a3d;
+    --grad: linear-gradient(135deg, #f7d774, #f0b90b 45%, #ff8a3d);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑", "Segoe UI", sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  a { color: var(--gold); text-decoration: none; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 88px 0; }
+  h2.sec-title {
+    font-size: 2rem; text-align: center; margin-bottom: 12px; letter-spacing: 2px;
+  }
+  h2.sec-title::after {
+    content: ""; display: block; width: 56px; height: 3px; margin: 14px auto 0;
+    background: var(--grad); border-radius: 2px;
+  }
+  p.sec-sub { text-align: center; color: var(--text-dim); margin-bottom: 48px; font-size: .95rem; }
+
+  /* ---------- 导航 ---------- */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10, 14, 26, .82); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  nav .logo { font-weight: 700; letter-spacing: 2px; font-size: 1.05rem; color: var(--text); }
+  nav .logo em { font-style: normal; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  /* 页中导航（超链接样式） */
+  .hero-nav { margin-top: 32px; display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
+  .hero-nav a { color: var(--gold); font-size: 1.06rem; letter-spacing: 2px; position: relative; padding-bottom: 4px; }
+  .hero-nav a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; background: var(--grad); transform: scaleX(0); transform-origin: left; transition: transform .25s; }
+  .hero-nav a:hover::after { transform: scaleX(1); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative; min-height: 92vh; display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 120px 24px 80px;
+  }
+  .hero .bg {
+    position: absolute; inset: 0; z-index: -2;
+    background: url("images/group-2.png") center 30% / cover no-repeat;
+    filter: brightness(.45) saturate(1.1);
+  }
+  .hero .shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(10,14,26,.55), rgba(10,14,26,.2) 45%, var(--bg)); }
+  .hero .en { letter-spacing: 8px; color: var(--gold); font-size: .95rem; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); letter-spacing: 6px; font-weight: 800; }
+  .hero .tag { margin-top: 18px; color: #cfd6e6; font-size: 1.05rem; }
+  .hero .meta { margin-top: 10px; color: var(--text-dim); font-size: .9rem; }
+  .hero .btns { margin-top: 34px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 12px 28px; border-radius: 999px; font-size: .95rem; letter-spacing: 1px;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .btn.gold { background: var(--grad); color: #1a1203; font-weight: 700; }
+  .btn.ghost { border: 1px solid rgba(240,185,11,.55); color: var(--gold); }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(240,185,11,.25); }
+
+  /* ---------- 简介 ---------- */
+  .about p { color: var(--text-dim); margin-bottom: 16px; }
+  .facts {
+    margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 14px;
+  }
+  .fact { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 14px; text-align: center; }
+  .fact b { display: block; font-size: 1.02rem; margin-bottom: 4px; }
+  .fact span { color: var(--text-dim); font-size: .82rem; }
+
+  /* ---------- 成员 ---------- */
+  .members { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 20px; }
+  .member {
+    display: block; color: inherit; text-decoration: none;
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
+    transition: transform .25s, box-shadow .25s; text-align: center;
+  }
+  .member:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,.45); }
+  .member .photo { aspect-ratio: 1; overflow: hidden; background: #1d2540; }
+  .member .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .member .info { padding: 16px 12px 20px; }
+  .member h3 { font-size: 1.12rem; letter-spacing: 1px; }
+  .member .more { margin-top: 8px; color: var(--gold); font-size: .8rem; letter-spacing: 1px; }
+  .member .detail { color: var(--text-dim); font-size: .8rem; }
+
+  /* ---------- 时间线 ---------- */
+  .timeline { position: relative; max-width: 760px; margin: 0 auto; padding-left: 32px; }
+  .timeline::before { content: ""; position: absolute; left: 9px; top: 4px; bottom: 4px; width: 2px; background: linear-gradient(180deg, var(--gold), rgba(240,185,11,.15)); }
+  .tl-item { position: relative; padding: 0 0 34px 20px; }
+  .tl-item::before {
+    content: ""; position: absolute; left: -32px; top: 6px; width: 12px; height: 12px;
+    border-radius: 50%; background: var(--bg); border: 3px solid var(--gold);
+  }
+  .tl-item .date { color: var(--gold); font-weight: 700; font-size: .92rem; letter-spacing: 1px; }
+  .tl-item h4 { font-size: 1.05rem; margin: 4px 0 6px; }
+  .tl-item p { color: var(--text-dim); font-size: .9rem; }
+
+  /* ---------- 作品 ---------- */
+  .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .work-card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 26px; }
+  .work-card h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-size: 1.1rem; }
+  .work-card h3 .ico { font-size: 1.3rem; }
+  .song-list { list-style: none; }
+  .song-list li { padding: 8px 0; border-bottom: 1px dashed var(--line); color: var(--text-dim); font-size: .9rem; display: flex; justify-content: space-between; gap: 10px; }
+  .song-list li:last-child { border-bottom: none; }
+  .song-list .d { color: #6b7385; font-size: .78rem; white-space: nowrap; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { padding: 4px 14px; border-radius: 999px; border: 1px solid rgba(240,185,11,.4); color: var(--gold); font-size: .82rem; }
+  .mat-list { list-style: none; }
+  .mat-list li { padding: 7px 0; border-bottom: 1px dashed var(--line); color: var(--text-dim); font-size: .88rem; }
+  .mat-list li:last-child { border-bottom: none; }
+  .mat-p { color: var(--text-dim); font-size: .88rem; margin-bottom: 10px; }
+
+  /* ---------- 成就 ---------- */
+  .awards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .award {
+    background: linear-gradient(160deg, #1c2440, var(--card)); border: 1px solid var(--line);
+    border-radius: 16px; padding: 26px; position: relative; overflow: hidden;
+  }
+  .award::before { content: "★"; position: absolute; right: 14px; top: 6px; font-size: 2.4rem; color: rgba(240,185,11,.12); }
+  .award .yr { color: var(--gold); font-size: .85rem; letter-spacing: 1px; }
+  .award h4 { margin: 8px 0 6px; font-size: 1.08rem; }
+  .award p { color: var(--text-dim); font-size: .85rem; }
+
+  /* ---------- 页脚 ---------- */
+  footer { border-top: 1px solid var(--line); padding: 40px 0 56px; text-align: center; color: #6b7385; font-size: .82rem; }
+  footer .src { margin-top: 8px; }
+  #backTop {
+    position: fixed; right: 26px; bottom: 26px; z-index: 99; width: 44px; height: 44px; border-radius: 50%;
+    border: none; background: var(--grad); color: #1a1203; font-size: 1.1rem; cursor: pointer;
+    opacity: 0; pointer-events: none; transition: opacity .3s;
+  }
+  #backTop.show { opacity: 1; pointer-events: auto; }
+
+  /* 进入视口动画 */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="logo" href="#top">TOP登陆<em>少年</em>组合</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="bg"></div>
+  <div class="shade"></div>
+  <div class="wrap">
+    <p class="en">T.O.P · TransfOrm Project</p>
+    <h1>TOP登陆少年组合</h1>
+    <p class="tag">五名少年，向顶峰登陆</p>
+    <p class="meta">中国内地男子演唱组合 · 时代峰峻第三代出道组合 · 2024年8月29日以五人阵容正式出道</p>
+    <nav class="hero-nav">
+      <a href="#about">简介</a>
+      <a href="#members">成员</a>
+      <a href="#timeline">时间线</a>
+      <a href="#works">作品</a>
+      <a href="#material">物料</a>
+      <a href="#awards">成就</a>
+    </nav>
+    <div class="btns">
+      <a class="btn gold" href="#members">认识成员</a>
+      <a class="btn ghost" href="#timeline">回顾历程</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2 class="sec-title reveal">组合简介</h2>
+    <p class="sec-sub reveal">TransfOrm Project —— 从练习生到舞台中央</p>
+    <div class="reveal">
+      <p><strong>TOP登陆少年</strong>（T.O.P，全称 TransfOrm Project）是中国内地男子演唱组合，由北京时代峰峻文化艺术发展有限公司打造，前身为 TF 家族第三代练习生团体。2024 年 8 月 26 日，组合于马来西亚吉隆坡举办的出道演唱会公布初代阵容；8 月 28 日成员余宇涵退出后，8 月 29 日官博确认以五人阵容正式出道。</p>
+      <p>组合由北京时代峰峻文化艺术发展有限公司打造，是时代峰峻继 TFBOYS、时代少年团之后推出的第三代出道组合。五位成员均于 2018 年通过时代峰峻「少年进化 / TF-TransFrom 计划」首次公开亮相，历经《TF少年进化论》系列舞台竞演与出道实录综艺《登陆日》的层层考核，最终以 朱志鑫（队长）、张泽禹、张极、左航、苏新皓 的五人阵容登陆舞台。组合名 T.O.P 取自 TransfOrm Project（变身计划），寓意少年们的成长与蜕变；粉丝名为「巴特福来」。</p>
+    </div>
+    <div class="facts reveal">
+      <div class="fact"><b>2024.8.29</b><span>出道日期（五人阵容）</span></div>
+      <div class="fact"><b>马来西亚·吉隆坡</b><span>出道地点</span></div>
+      <div class="fact"><b>时代峰峻</b><span>经纪公司</span></div>
+      <div class="fact"><b>5 人</b><span>成员阵容</span></div>
+      <div class="fact"><b>巴特福来</b><span>粉丝名</span></div>
+      <div class="fact"><b>TF家族三代</b><span>前身团体</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="members" style="background: var(--bg-2);">
+  <div class="wrap">
+    <h2 class="sec-title reveal">成员</h2>
+    <p class="sec-sub reveal">按出道顺序排列 · 点击卡片了解每位成员的详细经历</p>
+    <div class="members">
+      <a class="member reveal" href="members/22x.html">
+        <div class="photo"><img src="images/zhuzhixin.png" alt="22X（朱志鑫）" loading="lazy"></div>
+        <div class="info"><h3>22X</h3>
+          <p class="detail">朱志鑫 · 2005年11月19日 · 重庆<br>2018年加入TF家族，曾出演《光·渊》</p>
+          <p class="more">查看详细经历 →</p></div>
+      </a>
+      <a class="member reveal" href="members/zack.html">
+        <div class="photo"><img src="images/zhangzeyu.png" alt="Zack（张泽禹）" loading="lazy"></div>
+        <div class="info"><h3>Zack</h3>
+          <p class="detail">张泽禹 · 2007年4月30日 · 黑龙江哈尔滨<br>2017年参加《音乐大师课第三季》，2018年加入TF家族</p>
+          <p class="more">查看详细经历 →</p></div>
+      </a>
+      <a class="member reveal" href="members/jeremy.html">
+        <div class="photo"><img src="images/zhangji.png" alt="Jeremy（张极）" loading="lazy"></div>
+        <div class="info"><h3>Jeremy</h3>
+          <p class="detail">张极 · 2007年2月3日 · 江苏常州<br>2017年被星探选中成为TF家族练习生</p>
+          <p class="more">查看详细经历 →</p></div>
+      </a>
+      <a class="member reveal" href="members/left.html">
+        <div class="photo"><img src="images/zuohang.png" alt="Left（左航）" loading="lazy"></div>
+        <div class="info"><h3>Left</h3>
+          <p class="detail">左航 · 2006年5月22日 · 贵州遵义<br>2018年加入TF家族，曾主演电影《月光武士》</p>
+          <p class="more">查看详细经历 →</p></div>
+      </a>
+      <a class="member reveal" href="members/su.html">
+        <div class="photo"><img src="images/suxinhao.png" alt="Su（苏新皓）" loading="lazy"></div>
+        <div class="info"><h3>Su</h3>
+          <p class="detail">苏新皓 · 2007年1月12日 · 重庆<br>擅长舞蹈、唱歌，2018年加入TF家族</p>
+          <p class="more">查看详细经历 →</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="wrap">
+    <h2 class="sec-title reveal">时间线</h2>
+    <p class="sec-sub reveal">从公开亮相到成为组合的每一步</p>
+    <div class="timeline">
+      <div class="tl-item reveal"><div class="date">2018.08.29</div><h4>三代练习生首次亮相</h4><p>时代峰峻启动第三代练习生项目「少年进化 / TF-TransFrom 计划」，成员通过暑期汇演首次公开亮相，此后通过《TF少年进化论》系列舞台竞演接受考核。</p></div>
+      <div class="tl-item reveal"><div class="date">2024.06.29</div><h4>出道实录《登陆日》开播</h4><p>出道实录综艺《登陆日》发布，主题曲《等你的回答》同步上线。</p></div>
+      <div class="tl-item reveal"><div class="date">2024.08.26</div><h4>吉隆坡出道演唱会</h4><p>在马来西亚吉隆坡举办的出道演唱会上公布六人初代阵容（含余宇涵）。</p></div>
+      <div class="tl-item reveal"><div class="date">2024.08.29</div><h4>五人阵容正式出道</h4><p>8月28日余宇涵退出组合后，官博确认以五人形式正式出道。</p></div>
+      <div class="tl-item reveal"><div class="date">2024.09.06</div><h4>官宣队长与阵容顺序</h4><p>官宣朱志鑫担任组合队长，成员按 朱志鑫、张泽禹、张极、左航、苏新皓 的顺序活动。</p></div>
+      <div class="tl-item reveal"><div class="date">2024.09</div><h4>「湾区升明月」大湾区晚会首秀</h4><p>亮相「湾区升明月」2024大湾区电影音乐晚会，演唱《Hello 大湾》。</p></div>
+      <div class="tl-item reveal"><div class="date">2024.11.16</div><h4>金鸡奖颁奖礼国风舞台</h4><p>亮相第37届中国电影金鸡奖颁奖典礼，带来国风舞台《只此青绿》。</p></div>
+      <div class="tl-item reveal"><div class="date">2024.11.29</div><h4>首支单曲发行</h4><p>首支单曲《LØVE IS DANGEROUS!（危险的爱）》发行。</p></div>
+      <div class="tl-item reveal"><div class="date">2024.12.31</div><h4>江苏卫视跨年演唱会</h4><p>随组合参加2025江苏卫视跨年演唱会。</p></div>
+      <div class="tl-item reveal"><div class="date">2025.01.01</div><h4>新年单曲</h4><p>发行单曲《耶 (Yeah)》。</p></div>
+      <div class="tl-item reveal"><div class="date">2025.01</div><h4>公益：驰援西藏地震灾区</h4><p>通过中国乡村发展基金会向西藏日喀则地震灾区捐款30万元。</p></div>
+      <div class="tl-item reveal"><div class="date">2025.01.29</div><h4>东方卫视春晚</h4><p>随组合参加东方卫视春节晚会，演唱《开往春天的光明列车》《耶 (Yeah)》。</p></div>
+      <div class="tl-item reveal"><div class="date">2025.02.14</div><h4>情人节单曲</h4><p>发行单曲《我 VS Justin Bieber》。</p></div>
+      <div class="tl-item reveal"><div class="date">2025.04</div><h4>单曲连发</h4><p>陆续发行百事可乐品牌年度主题曲《渴望就可能》、《无所畏计划 (Emergency)》《痴人说梦 (DayDream)》《For You（写给你）》等单曲。</p></div>
+      <div class="tl-item reveal"><div class="date">2025.07</div><h4>公益：驰援华北洪灾</h4><p>华北强降雨期间，组合与公司其他艺人合计向密云灾区捐款300万元。</p></div>
+      <div class="tl-item reveal"><div class="date">2025.05.01–02</div><h4>首场演唱会「无所畏计划」</h4><p>于福建晋江二体中心举办组合首场演唱会。</p></div>
+      <div class="tl-item reveal"><div class="date">2025.08.28–31</div><h4>两首单曲发行</h4><p>《命 (FATE)》《走在路上突然收到了快乐邀请》先后上线。</p></div>
+      <div class="tl-item reveal"><div class="date">2025.08.29–30</div><h4>「5/5 · ONE有引力」演唱会</h4><p>于海南海口五源河体育场举办，与粉丝共庆出道一周年。</p></div>
+      <div class="tl-item reveal"><div class="date">2025.12.06</div><h4>首获组合奖项</h4><p>获 2025 爱奇艺尖叫之夜海外单元「亚太年度新锐组合」。</p></div>
+      <div class="tl-item reveal"><div class="date">2026.02.05</div><h4>微博之夜荣誉</h4><p>获 2025 微博之夜「微博年度人气组合」。</p></div>
+      <div class="tl-item reveal"><div class="date">2026.02.27</div><h4>首张专辑发行</h4><p>首张专辑《无所畏惧（Sine metu carpe diem）》正式发行。</p></div>
+      <div class="tl-item reveal"><div class="date">2026.04.11–12</div><h4>「浪漫主义」演唱会</h4><p>于澳门银河综艺馆举办主题演唱会。</p></div>
+      <div class="tl-item reveal"><div class="date">2026.07.25–29</div><h4>「梦寐以求」演唱会</h4><p>于青岛国信体育中心体育场举办，共 4 场。</p></div>
+      <div class="tl-item reveal"><div class="date">2026.08.16</div><h4>TMEA 斩获双奖</h4><p>在第七届腾讯音乐娱乐盛典（TMEA）获「年度最佳华语团体」及「QQ音乐年度巅峰价值团体」。</p></div>
+      <div class="tl-item reveal"><div class="date">2026.08.25–29</div><h4>出道两周年「重」演唱会</h4><p>于徐州奥体中心主体育场举办，共 4 场，与粉丝共同庆祝组合出道两周年。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="works" style="background: var(--bg-2);">
+  <div class="wrap">
+    <h2 class="sec-title reveal">代表作品</h2>
+    <p class="sec-sub reveal">单曲 · 专辑 · 综艺</p>
+    <div class="works-grid">
+      <div class="work-card reveal">
+        <h3><span class="ico">🎵</span>单曲</h3>
+        <ul class="song-list">
+          <li>等你的回答 <span class="d">2024.06 出道实录主题曲</span></li>
+          <li>LØVE IS DANGEROUS!（危险的爱） <span class="d">2024.11 首支单曲</span></li>
+          <li>耶 (Yeah) <span class="d">2025.01</span></li>
+          <li>我 VS Justin Bieber <span class="d">2025.02</span></li>
+          <li>渴望就可能 <span class="d">2025.04 百事品牌曲</span></li>
+          <li>无所畏计划 (Emergency) <span class="d">2025.04</span></li>
+          <li>痴人说梦 (DayDream) <span class="d">2025.04</span></li>
+          <li>命 (FATE) <span class="d">2025.08</span></li>
+        </ul>
+      </div>
+      <div class="work-card reveal">
+        <h3><span class="ico">💿</span>专辑</h3>
+        <ul class="song-list">
+          <li><strong style="color:var(--text)">《无所畏惧》</strong> <span class="d">2026.02.27</span></li>
+          <li>Sine metu carpe diem <span class="d">无畏地把握当下</span></li>
+          <li>收录危险的爱 / 耶 / 我 VS Justin Bieber / 无所畏计划 / For You / 痴人说梦 / 你能听到吗 / 命 / Still Alive（背水一战）等</li>
+        </ul>
+      </div>
+      <div class="work-card reveal">
+        <h3><span class="ico">📺</span>综艺 & 舞台</h3>
+        <div class="chips">
+          <span class="chip">登陆日</span><span class="chip">全员加速中2025</span><span class="chip">披荆斩棘2025</span><span class="chip">你好，星期六</span><span class="chip">盒子里的猫第二季</span><span class="chip">最美中轴线第四季</span><span class="chip">一路向海的少年</span><span class="chip">金鸡奖颁奖礼</span><span class="chip">大湾区电影音乐晚会</span>
+        </div>
+        <p style="color:var(--text-dim); font-size:.85rem; margin-top:16px;">先后亮相「湾区升明月」2024大湾区电影音乐晚会（《Hello 大湾》）、第37届中国电影金鸡奖颁奖礼（国风舞台《只此青绿》）等重要舞台。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="material">
+  <div class="wrap">
+    <h2 class="sec-title reveal">物料合集</h2>
+    <p class="sec-sub reveal">官方账号 · 出道实录 · 团综 · 演唱会官摄</p>
+    <div class="works-grid">
+      <div class="work-card reveal">
+        <h3><span class="ico">📺</span>出道实录《登陆日》</h3>
+        <p class="mat-p">2024年6月29日开播，共9期，记录三代练习生的出道之战，主题曲《等你的回答》。官方播出平台：<a href="https://search.iqiyi.com/?q=%E7%99%BB%E9%99%86%E6%97%A5" target="_blank" rel="noopener">爱奇艺</a>、WeTV、<a href="https://www.youtube.com/results?search_query=%E7%99%BB%E9%99%86%E6%97%A5" target="_blank" rel="noopener">YouTube</a>。</p>
+        <p class="mat-p"><a href="https://baike.baidu.com/item/%E7%99%BB%E9%99%86%E6%97%A5/64604751" target="_blank" rel="noopener">节目介绍 →</a></p>
+      </div>
+      <div class="work-card reveal">
+        <h3><span class="ico">📱</span>官方账号</h3>
+        <ul class="mat-list">
+          <li><a href="https://search.bilibili.com/all?keyword=%E7%99%BB%E9%99%86%E5%B0%91%E5%B9%B4%E7%BB%84%E5%90%88" target="_blank" rel="noopener">B站「TOP登陆少年组合」</a> — 成团后物料、团综、官摄</li>
+          <li><a href="https://search.bilibili.com/all?keyword=TF%E5%AE%B6%E6%97%8F" target="_blank" rel="noopener">B站「TF家族」</a> — 练习生时期物料</li>
+          <li><a href="https://search.bilibili.com/all?keyword=%E7%99%BB%E9%99%86%E8%AE%A1%E5%88%92" target="_blank" rel="noopener">B站「登陆计划」</a> — 登陆计划系列正片</li>
+          <li>微博 / 抖音：TOP登陆少年组合、TF家族 官方账号</li>
+        </ul>
+      </div>
+      <div class="work-card reveal">
+        <h3><span class="ico">🎬</span>成团后团综</h3>
+        <ul class="mat-list">
+          <li><a href="https://www.bilibili.com/video/BV1KXKw6TEkf/" target="_blank" rel="noopener">《ō、ó、ǒ、ò、o！》</a> — 日常团综</li>
+          <li><a href="https://www.bilibili.com/video/BV11B5szeExd/" target="_blank" rel="noopener">《TOP ARE DANGEROUS之异次元大作战》</a></li>
+          <li>《一路向海的少年》（2026年播出）</li>
+        </ul>
+      </div>
+      <div class="work-card reveal">
+        <h3><span class="ico">🎤</span>演唱会官摄</h3>
+        <ul class="mat-list">
+          <li><a href="https://www.bilibili.com/video/BV1MzJzzZEyf/" target="_blank" rel="noopener">《我 VS Justin Bieber》·「无所畏计划」泉州站</a></li>
+          <li><a href="https://www.bilibili.com/video/av115554283166976/" target="_blank" rel="noopener">「5/5·ONE有引力」一周年演唱会合集</a></li>
+          <li><a href="https://www.bilibili.com/video/BV11NzMBbEN4/" target="_blank" rel="noopener">荣耀新年音乐会《THE WAY YOU ARE》</a></li>
+        </ul>
+      </div>
+      <div class="work-card reveal">
+        <h3><span class="ico">📚</span>练习生时期物料</h3>
+        <ul class="mat-list">
+          <li>《TF少年进化论》系列公演（《秋日幻想曲》→《陆》，共6期）</li>
+          <li>《练习生日常不过的日常》（100期）</li>
+          <li>《一起去做的n件事》《恭喜你发现了宝藏》等团综</li>
+        </ul>
+      </div>
+      <div class="work-card reveal">
+        <h3><span class="ico">🎵</span>音乐作品</h3>
+        <ul class="mat-list">
+          <li>QQ音乐、网易云音乐、酷狗等平台搜索「TOP登陆少年」</li>
+          <li>首张专辑《无所畏惧（Sine metu carpe diem）》（2026.02.27）</li>
+          <li>「登陆计划」系列演唱会预热曲《一起长大吧！笨蛋》</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="awards">
+  <div class="wrap">
+    <h2 class="sec-title reveal">成就与荣誉</h2>
+    <p class="sec-sub reveal">舞台之外，亦是担当</p>
+    <div class="awards">
+      <div class="award reveal"><div class="yr">2025.12.06</div><h4>亚太年度新锐组合</h4><p>2025 爱奇艺尖叫之夜海外单元</p></div>
+      <div class="award reveal"><div class="yr">2026.02.05</div><h4>微博年度人气组合</h4><p>2025 微博之夜</p></div>
+      <div class="award reveal"><div class="yr">2026.08.16</div><h4>年度最佳华语团体</h4><p>第七届腾讯音乐娱乐盛典（TMEA）</p></div>
+      <div class="award reveal"><div class="yr">2026.08.16</div><h4>QQ音乐年度巅峰价值团体</h4><p>第七届腾讯音乐娱乐盛典（TMEA）</p></div>
+      <div class="award reveal"><div class="yr">公益</div><h4>赈灾捐款</h4><p>2025.01 向西藏日喀则地震灾区捐款30万元；2025.07 华北强降雨期间与公司艺人合计向密云灾区捐款300万元。</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>本页面为粉丝自制介绍页，非官方页面。</p>
+    <p class="src">资料来源：
+      <a href="https://baike.baidu.com/item/TOP%E7%99%BB%E9%99%86%E5%B0%91%E5%B9%B4/65499129" target="_blank" rel="noopener">百度百科「TOP登陆少年」</a> ·
+      <a href="https://zh.wikipedia.org/wiki/%E7%99%BB%E9%99%86%E5%B0%91%E5%B9%B4" target="_blank" rel="noopener">维基百科「登陆少年」</a>
+    </p>
+    <p>图片来源于百度百科词条页面，版权归原作者所有，仅供学习交流。</p>
+  </div>
+</footer>
+
+<button id="backTop" title="回到顶部">↑</button>
+
+<script>
+  // 回到顶部
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', () => backTop.classList.toggle('show', window.scrollY > 400));
+  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // 进入视口渐显
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
