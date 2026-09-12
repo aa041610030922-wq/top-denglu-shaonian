@@ -33,6 +33,25 @@
   .chip { padding: 5px 16px; border-radius: 999px; border: 1px solid rgba(240,185,11,.4); color: var(--gold); font-size: .84rem; }
   .pager { display: flex; justify-content: space-between; gap: 16px; padding: 36px 0 0; font-size: .92rem; flex-wrap: wrap; }
   footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 26px 0 60px; text-align: center; color: #6b7385; font-size: .8rem; }
+
+  /* ---------- 移动端适配 ---------- */
+  @media (max-width: 640px) {
+    .wrap { padding: 0 16px; }
+    .topbar a { padding: 13px 16px; font-size: .9rem; }
+    .mhero { padding: 96px 0 20px; }
+    .mhero img { width: 140px; height: 140px; }
+    .mhero h1 { font-size: 2rem; letter-spacing: 3px; }
+    .mhero .cn { font-size: 1rem; }
+    .mhero .meta { font-size: .85rem; }
+    .mhero .bio { font-size: .86rem; }
+    section { padding: 34px 0 8px; }
+    h2 { font-size: 1.3rem; margin-bottom: 26px; }
+    .timeline { padding-left: 24px; }
+    .tl-item { padding-bottom: 22px; }
+    .works-box { padding: 20px; }
+    .pager { font-size: .85rem; gap: 10px; }
+    footer { padding: 22px 0 60px; }
+  }
 </style>
 </head>
 <body>
@@ -42,7 +61,7 @@
     <img src="../images/zuohang.png" alt="Left（左航）">
     <h1>Left</h1>
     <p class="cn">左航</p>
-    <p class="meta">2006年5月22日 · 贵州遵义 · 组合rap担当</p>
+    <p class="meta">2006年5月22日 · 重庆綦江 · 组合rap担当</p>
     <p class="bio">被导演虹影一眼相中的电影少年，三代练习生中最早「触电」的人，以说唱实力与表演天赋在组合中独树一帜。</p>
   </header>
   <section>

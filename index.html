@@ -154,6 +154,46 @@
   /* 进入视口动画 */
   .reveal { opacity: 0; transform: translateY(26px); transition: opacity .6s ease, transform .6s ease; }
   .reveal.in { opacity: 1; transform: none; }
+
+  /* ---------- 移动端适配 ---------- */
+  @media (max-width: 640px) {
+    .wrap { padding: 0 16px; }
+    nav .inner { padding: 0 16px; height: 54px; }
+    nav .logo { font-size: .95rem; letter-spacing: 1px; }
+    section { padding: 60px 0; }
+    h2.sec-title { font-size: 1.5rem; letter-spacing: 1px; }
+    p.sec-sub { margin-bottom: 32px; font-size: .88rem; }
+
+    .hero { min-height: 88vh; padding: 100px 16px 64px; }
+    .hero .en { letter-spacing: 4px; font-size: .82rem; }
+    .hero h1 { font-size: clamp(2rem, 10.5vw, 2.6rem); letter-spacing: 3px; }
+    .hero .tag { font-size: .95rem; }
+    .hero .meta { font-size: .82rem; line-height: 1.6; }
+    .hero-nav { gap: 12px 18px; margin-top: 24px; }
+    .hero-nav a { font-size: .95rem; letter-spacing: 1px; }
+    .hero .btns { gap: 12px; }
+    .btn { padding: 10px 22px; font-size: .9rem; }
+
+    .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .fact { padding: 14px 10px; }
+
+    .members { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .member .info { padding: 12px 8px 14px; }
+    .member h3 { font-size: 1rem; }
+    .member .detail { font-size: .74rem; }
+
+    .timeline { padding-left: 24px; }
+    .tl-item { padding-bottom: 26px; }
+
+    .works-grid { grid-template-columns: 1fr; gap: 14px; }
+    .work-card { padding: 20px; }
+
+    .awards { grid-template-columns: 1fr; gap: 14px; }
+
+    .mat-list li, .mat-p { overflow-wrap: anywhere; }
+    footer { padding: 32px 0 72px; font-size: .76rem; }
+    #backTop { right: 16px; bottom: 16px; width: 40px; height: 40px; }
+  }
 </style>
 </head>
 <body>
@@ -232,7 +272,7 @@
       <a class="member reveal" href="members/left.html">
         <div class="photo"><img src="images/zuohang.png" alt="Left（左航）" loading="lazy"></div>
         <div class="info"><h3>Left</h3>
-          <p class="detail">左航 · 2006年5月22日 · 贵州遵义<br>2018年加入TF家族，曾主演电影《月光武士》</p>
+          <p class="detail">左航 · 2006年5月22日 · 重庆綦江<br>2018年加入TF家族，曾主演电影《月光武士》</p>
           <p class="more">查看详细经历 →</p></div>
       </a>
       <a class="member reveal" href="members/su.html">
