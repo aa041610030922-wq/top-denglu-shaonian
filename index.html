@@ -18,7 +18,7 @@
     --grad: linear-gradient(135deg, #f7d774, #f0b90b 45%, #ff8a3d);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   body {
     background: var(--bg);
     color: var(--text);
@@ -164,7 +164,8 @@
     h2.sec-title { font-size: 1.5rem; letter-spacing: 1px; }
     p.sec-sub { margin-bottom: 32px; font-size: .88rem; }
 
-    .hero { min-height: 88vh; padding: 100px 16px 64px; }
+    .hero { min-height: 88vh; min-height: 88svh; padding: 100px 16px 64px; }
+    .hero .bg { background-size: contain; background-position: center 20%; }
     .hero .en { letter-spacing: 4px; font-size: .82rem; }
     .hero h1 { font-size: clamp(2rem, 10.5vw, 2.6rem); letter-spacing: 3px; }
     .hero .tag { font-size: .95rem; }
@@ -184,6 +185,7 @@
 
     .timeline { padding-left: 24px; }
     .tl-item { padding-bottom: 26px; }
+    .tl-item::before { left: -24px; }
 
     .works-grid { grid-template-columns: 1fr; gap: 14px; }
     .work-card { padding: 20px; }
